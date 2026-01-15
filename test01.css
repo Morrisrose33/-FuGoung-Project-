@@ -1,0 +1,427 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #0b1020 0%, #05070f 100%);
+  color: rgba(255, 255, 255, 0.92);
+  min-height: 100vh;
+  padding: 48px 16px;
+}
+
+.container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.hero {
+  text-align: center;
+  margin-top: 72px;
+  margin-bottom: 56px;
+}
+
+.title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  letter-spacing: 0.08em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  display: block;
+  padding: 20px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.06em;
+}
+
+.card p {
+  opacity: 0.78;
+  line-height: 1.6;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 52px;
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+/* 桌面版：三欄 */
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Top Navigation */
+.topnav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 14px;
+  margin-bottom: 16px;
+
+  background: rgba(5, 7, 15, 0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.brand{
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+
+.navlist{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navlist a{
+  text-decoration: none;
+  color: rgba(255,255,255,0.88);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border 0.2s ease, transform 0.2s ease;
+}
+
+.navlist a:hover{
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.10);
+}
+
+/* .navlist a[aria-current="page"]{
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.12);
+} */
+
+/* CTA button */
+/* .navlist .cta{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.14);
+} */
+
+.navlist .cta:hover{
+  transform: translateY(-1px);
+}
+
+/* Dropdown */
+.has-submenu{ position: relative; }
+.submenu{
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  min-width: 180px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(5, 7, 15, 0.92);
+  border: 1px solid rgba(255,255,255,0.10);
+  display: none;
+}
+
+.has-submenu:hover .submenu{ display: block; }
+
+.submenu a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* Mobile wrap */
+@media (max-width: 720px){
+  .topnav{ flex-direction: column; align-items: stretch; }
+  .navlist{ flex-wrap: wrap; justify-content: center; }
+  .has-submenu:hover .submenu{ position: static; display: block; margin-top: 8px; }
+}
+
+/* ===== Feature Cards (dynamic) ===== */
+.feature-cards{
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  gap: 18px;
+  margin: 12px 0 34px;
+}
+
+.feature-card{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  overflow: hidden;
+  transform: translateY(10px);
+  /* opacity: 0; */
+  transition: opacity 600ms ease, transform 600ms ease, background 200ms ease;
+}
+
+.feature-card.is-visible{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.feature-card:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.feature-media{
+  min-height: 180px;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.05);
+  /* 你可以換成自己的圖（務必使用可用授權圖片） */
+  background-image:
+    linear-gradient(180deg, rgba(5,7,15,0.15), rgba(5,7,15,0.65)),
+    url("https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1400&q=80");
+}
+
+.feature-content{
+  padding: 18px 18px 20px;
+}
+
+.feature-title{
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.feature-text{
+  opacity: 0.82;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.feature-btn{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.92);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 200ms ease, background 200ms ease, border 200ms ease;
+}
+
+.feature-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.feature-btn--ghost{
+  background: transparent;
+}
+
+/* Expandable card */
+.feature-card--expandable .feature-more{
+  margin-top: 4px;
+}
+
+/* Desktop: media left, text right */
+@media (min-width: 900px){
+  .feature-card{
+    grid-template-columns: 320px 1fr;
+    align-items: stretch;
+  }
+  .feature-media{
+    min-height: 100%;
+  }
+}
+
+/* Footer polish */
+.footer{
+  width: 100%;
+  max-width: 980px;
+  margin-top: 64px;
+  padding: 18px 0 26px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.footer-line{
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.footer-meta{
+  font-size: 0.92rem;
+  opacity: 0.6;
+  line-height: 1.7;
+}
+
+/* ===== spacing between sections ===== */
+
+/* 三張功能卡 跟 後面內容拉開 */
+.cards{
+  width: 100%;
+  max-width: 980px;
+  margin-bottom: 56px;   /* ← 你想更鬆就 72px */
+}
+
+/* 兩張動態圖卡本身再鬆一點 */
+.feature-cards{
+  margin: 0 0 64px;      /* ← 上方不再貼 cards，下方也更有呼吸 */
+  gap: 26px;             /* ← 兩張動態卡彼此距離拉開 */
+}
+
+/* 如果想讓動態卡跟頁面左右更一致（可選） */
+.feature-card{
+  border-radius: 20px;
+}
+
+/* ===== Section titles ===== */
+.section-title{
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 14px;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+/* ===== Who (服務對象) ===== */
+.who{
+  width: 100%;
+  max-width: 980px;
+  margin: 10px auto 34px;
+}
+
+.who-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.who-card{
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+}
+
+.who-title{
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.who-text{
+  opacity: 0.78;
+  line-height: 1.7;
+}
+
+/* 桌機：三個小卡並排 */
+@media (min-width: 900px){
+  .who-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== How (使用方式) ===== */
+.how{
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 34px;
+}
+
+.how-steps{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 0;
+}
+
+.how-step{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+}
+
+.step-num{
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+  font-weight: 800;
+  opacity: 0.92;
+}
+
+.step-title{
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.step-text{
+  opacity: 0.78;
+  line-height: 1.7;
+}
+
+/* 桌機：三步驟並排 */
+@media (min-width: 900px){
+  .how-steps{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .how-step{
+    grid-template-columns: 44px 1fr;
+  }
+}
+
+

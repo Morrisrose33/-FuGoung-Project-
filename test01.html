@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>歡迎回家</title>
+  <link rel="stylesheet" href="test01.css" />
+
+
+</head>
+<body>
+
+<nav class="topnav" aria-label="主選單">
+  <a class="brand" href="test01.html">回家</a>
+
+  <ul class="navlist">
+    <li><a href="test01.html" aria-current="page">首頁</a></li>
+
+    <li class="has-submenu">
+      <a href="about.html">功能介紹</a>
+      <ul class="submenu" aria-label="功能介紹子選單">
+        <li><a href="about.html#who">網站服務對象</a></li>
+        <li><a href="about.html#how">網站導覽</a></li>
+        <li><a href="about.html#faq">常見問題</a></li>
+      </ul>
+    </li>
+
+    <li><a href="together.html">和你相處</a></li>
+    <li><a href="stories.html">夜燈加油站</a></li>
+    <li><a class="cta" href="companion.html">情緒陪伴</a></li>
+    <li><a class="login" href="login.html">會員登入</a></li>
+  </ul>
+</nav>
+
+  <main class="container">
+
+    <section class="hero">
+      <h1 class="title">歡迎回家</h1>
+      <p class="subtitle">今晚辛苦了，先坐下。</p>
+    </section>
+
+    <section class="cards">
+      <a class="card" href="home-station.html">
+        <h2>夜晚回家站</h2>
+        <p>讓你在 10 秒內慢慢放鬆。</p>
+      </a>
+
+      <a class="card" href="social-room.html">
+        <h2>社交練習室</h2>
+        <p>不尷尬地練習怎麼靠近別人。</p>
+      </a>
+
+      <a class="card" href="akaza-room.html">
+        <h2>猗窩座的房間</h2>
+        <p>把痛放下來，讓它被接住。</p>
+      </a>
+    </section>
+
+    <section class="feature-cards" aria-label="溫柔提醒">
+  <!-- 動態圖卡 1：可放鬆 -->
+    <article class="feature-card reveal" id="calm-card">
+    <div class="feature-media" role="img" aria-label="一位開懷笑著喝咖啡的人"></div>
+    <div class="feature-content">
+      <h2 class="feature-title">這是一個你可以放鬆的地方</h2>
+      <p class="feature-text">
+        你不需要表現得很好。先慢慢呼吸，讓自己回到身體裡。
+      </p>
+      <button class="feature-btn" type="button" id="new-line-btn">
+        再給我一句
+      </button>
+    </div>
+    </article>
+
+  <!-- 動態圖卡 2：專屬梳理空間（可展開） -->
+    <article class="feature-card feature-card--expandable reveal" id="space-card">
+    <div class="feature-content">
+      <h2 class="feature-title">你的專屬梳理空間</h2>
+      <p class="feature-text">
+        這裡不是要你立刻變好，而是讓混亂可以被慢慢拆開。
+      </p>
+
+      <div class="feature-more" id="space-more" hidden>
+        <p class="feature-text">
+          你可以從一句話開始：<br />
+          「我現在最卡住的是……」
+        </p>
+        <p class="feature-text">
+          你也可以只先讀一段文字，明天再回來。這裡不催你。
+        </p>
+      </div>
+
+      <button class="feature-btn feature-btn--ghost" type="button" id="toggle-space-btn" aria-expanded="false">
+        展開
+      </button>
+    </div>
+    </article>
+  </section>
+  <section class="who" aria-label="網站服務對象">
+  <h2 class="section-title">這裡適合你，如果你正在…</h2>
+  <div class="who-grid">
+    <div class="who-card">
+      <p class="who-title">很累、腦袋停不下來</p>
+      <p class="who-text">想要先安靜一下、把呼吸找回來。</p>
+    </div>
+
+    <div class="who-card">
+      <p class="who-title">想靠近人，但不知道怎麼說</p>
+      <p class="who-text">希望有一個安全的地方先練習。</p>
+    </div>
+
+    <div class="who-card">
+      <p class="who-title">心裡有痛，但不想被評分</p>
+      <p class="who-text">只想把感受放下來，慢慢梳理。</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="how" aria-label="使用方式">
+  <h2 class="section-title">你可以這樣使用</h2>
+
+  <ol class="how-steps">
+    <li class="how-step">
+      <span class="step-num">1</span>
+      <div class="step-body">
+        <p class="step-title">選一個房間</p>
+        <p class="step-text">不用選對，先選「你此刻最需要的」。</p>
+      </div>
+    </li>
+
+    <li class="how-step">
+      <span class="step-num">2</span>
+      <div class="step-body">
+        <p class="step-title">拿到一個回應</p>
+        <p class="step-text">一句話、一個練習、或是一段安靜的陪伴。</p>
+      </div>
+    </li>
+
+    <li class="how-step">
+      <span class="step-num">3</span>
+      <div class="step-body">
+        <p class="step-title">願意就回來</p>
+        <p class="step-text">這裡不催你。你可以每天回來一點點。</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+
+  <footer class="footer">
+  <p class="footer-line">如果你願意，你可以每天回來。</p>
+  <p class="footer-meta">Portfolio project · Front-end & UX practice</p>
+  <p class="footer-meta">© 2026 Home Project. Personal practice only.</p>
+</footer>
+
+  </main>
+
+
+
+
+<script src="test01.js"></script>
+</body>
+</html>
