@@ -5,159 +5,297 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>歡迎回家</title>
   <link rel="stylesheet" href="test01.css" />
-
-
 </head>
+
 <body>
 
 <nav class="topnav" aria-label="主選單">
-  <a class="brand" href="test01.html">回家</a>
+  <a class="brand" href="#top">回家</a>
 
   <ul class="navlist">
-    <li><a href="test01.html" aria-current="page">首頁</a></li>
+    <li><a href="#top" aria-current="page">首頁</a></li>
 
     <li class="has-submenu">
-      <a href="about.html">功能介紹</a>
+      <a href="#intro">功能介紹</a>
       <ul class="submenu" aria-label="功能介紹子選單">
-        <li><a href="about.html#who">網站服務對象</a></li>
-        <li><a href="about.html#how">網站導覽</a></li>
-        <li><a href="about.html#faq">常見問題</a></li>
+        <li><a href="#who">網站服務對象</a></li>
+        <li><a href="#how">網站導覽</a></li>
+        <li><a href="#faq">常見問題</a></li>
       </ul>
     </li>
 
-    <li><a href="together.html">和你相處</a></li>
-    <li><a href="stories.html">夜燈加油站</a></li>
-    <li><a class="cta" href="companion.html">情緒陪伴</a></li>
-    <li><a class="login" href="login.html">會員登入</a></li>
+    <li><a href="#together">和你相處</a></li>
+    <li><a href="#stories">夜燈加油站</a></li>
+    <li><a class="cta" href="#companion">情緒陪伴</a></li>
+    <li><a class="login" href="#login">會員登入</a></li>
   </ul>
 </nav>
 
-  <main class="container">
+<main class="container">
 
-    <section class="hero">
-      <h1 class="title">歡迎回家</h1>
-      <p class="subtitle">今晚辛苦了，先坐下。</p>
-    </section>
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <h1 class="title">歡迎回家</h1>
+    <p class="subtitle">今晚辛苦了，先坐下。</p>
+  </section>
 
-    <section class="cards">
-      <a class="card" href="home-station.html">
-        <h2>夜晚回家站</h2>
-        <p>讓你在 10 秒內慢慢放鬆。</p>
-      </a>
+  <!-- Intro / Mission (精簡版) -->
+  <section class="who" id="intro" aria-label="功能介紹">
+    <h2 class="section-title">這是一個低負擔的情緒休息站</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <p class="who-title">主軸</p>
+        <p class="who-text">把情緒需求變成清楚的 UX 入口與回應。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">方式</p>
+        <p class="who-text">少一點選擇、多一點被理解的節奏。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">目標</p>
+        <p class="who-text">讓你在 30–90 秒內慢慢回到自己。</p>
+      </div>
+    </div>
+  </section>
 
-      <a class="card" href="social-room.html">
-        <h2>社交練習室</h2>
-        <p>不尷尬地練習怎麼靠近別人。</p>
-      </a>
+  <!-- Who -->
+  <section class="who" id="who" aria-label="網站服務對象">
+    <h2 class="section-title">這裡適合你，如果你正在…</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <p class="who-title">很累、腦袋停不下來</p>
+        <p class="who-text">想要先安靜一下、把呼吸找回來。</p>
+      </div>
 
-      <a class="card" href="akaza-room.html">
-        <h2>猗窩座的房間</h2>
-        <p>把痛放下來，讓它被接住。</p>
-      </a>
-    </section>
+      <div class="who-card">
+        <p class="who-title">想靠近人，但不知道怎麼說</p>
+        <p class="who-text">希望有一個安全的地方先練習。</p>
+      </div>
 
-    <section class="feature-cards" aria-label="溫柔提醒">
-  <!-- 動態圖卡 1：可放鬆 -->
+      <div class="who-card">
+        <p class="who-title">心裡有痛，但不想被評分</p>
+        <p class="who-text">只想把感受放下來，慢慢梳理。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How -->
+  <section class="how" id="how" aria-label="使用方式">
+    <h2 class="section-title">你可以這樣使用</h2>
+
+    <ol class="how-steps">
+      <li class="how-step">
+        <span class="step-num">1</span>
+        <div class="step-body">
+          <p class="step-title">選一個房間</p>
+          <p class="step-text">不用選對，先選「你此刻最需要的」。</p>
+        </div>
+      </li>
+
+      <li class="how-step">
+        <span class="step-num">2</span>
+        <div class="step-body">
+          <p class="step-title">拿到一個回應</p>
+          <p class="step-text">一句話、一個練習、或是一段安靜的陪伴。</p>
+        </div>
+      </li>
+
+      <li class="how-step">
+        <span class="step-num">3</span>
+        <div class="step-body">
+          <p class="step-title">願意就回來</p>
+          <p class="step-text">這裡不催你。你可以每天回來一點點。</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Rooms -->
+  <section class="cards" id="rooms" aria-label="今晚你想去哪裡">
+    <a class="card" href="#home-station">
+      <h2>夜晚回家站</h2>
+      <p>讓你在 10 秒內慢慢放鬆。</p>
+      <br>
+      <p>「夜晚回家站」是一個情緒安置用的前端 prototype。設計目標不是解決問題，而是讓使用者在 1–3 分鐘內從過載狀態回到可呼吸的狀態。
+        我刻意只做最低限度的互動，因為這個場景最重要的是『不要增加負擔』。</p>
+    </a>
+
+    <a class="card" href="#social-room">
+      <h2>社交練習室</h2>
+      <p>不尷尬地練習怎麼靠近別人。</p>
+      <br>
+      <p>用情境題練「怎麼說」：提供可直接套用的句型/回應</p>
+    </a>
+
+    <a class="card" href="#akaza-room">
+      <h2>猗窩座的房間</h2>
+      <p>把痛放下來，讓它被接住。</p>
+      <br>
+      <p>讓痛被命名與放下：用提問引導你把刺痛的瞬間說清楚</p>
+    </a>
+  </section>
+
+  <!-- Room: Home Station (one-page section preview) -->
+  <section class="feature-cards" id="home-station" aria-label="夜晚回家站">
+    <article class="feature-card reveal">
+      <div class="feature-content">
+        <h2 class="feature-title">夜晚回家站</h2>
+        <p class="feature-text">你已經走到這裡了。先不用急著做任何事。</p>
+        <p class="feature-text" style="opacity:0.74;">吸氣 —— 停一下 —— 吐氣 ——</p>
+        <a class="feature-btn feature-btn--ghost" href="home-station.html">（可選）進入完整頁</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- Dynamic Feature Cards (your original two cards) -->
+  <section class="feature-cards" id="calm" aria-label="溫柔提醒">
     <article class="feature-card reveal" id="calm-card">
-    <div class="feature-media" role="img" aria-label="一位開懷笑著喝咖啡的人"></div>
-    <div class="feature-content">
-      <h2 class="feature-title">這是一個你可以放鬆的地方</h2>
-      <p class="feature-text">
-        你不需要表現得很好。先慢慢呼吸，讓自己回到身體裡。
-      </p>
-      <button class="feature-btn" type="button" id="new-line-btn">
-        再給我一句
-      </button>
-    </div>
+      <div class="feature-media" role="img" aria-label="一位開懷笑著喝咖啡的人"></div>
+      <div class="feature-content">
+        <h2 class="feature-title">這是一個你可以放鬆的地方</h2>
+        <p class="feature-text">
+          你不需要表現得很好。先慢慢呼吸，讓自己回到身體裡。
+        </p>
+        <button class="feature-btn" type="button" id="new-line-btn">再給我一句</button>
+      </div>
     </article>
 
-  <!-- 動態圖卡 2：專屬梳理空間（可展開） -->
     <article class="feature-card feature-card--expandable reveal" id="space-card">
-    <div class="feature-content">
-      <h2 class="feature-title">你的專屬梳理空間</h2>
-      <p class="feature-text">
-        這裡不是要你立刻變好，而是讓混亂可以被慢慢拆開。
-      </p>
+      <div class="feature-content">
+        <h2 class="feature-title">你的專屬梳理空間</h2>
+        <p class="feature-text">
+          這裡不是要你立刻變好，而是讓混亂可以被慢慢拆開。
+        </p>
 
-      <div class="feature-more" id="space-more" hidden>
-        <p class="feature-text">
-          你可以從一句話開始：<br />
-          「我現在最卡住的是……」
-        </p>
-        <p class="feature-text">
-          你也可以只先讀一段文字，明天再回來。這裡不催你。
-        </p>
+        <div class="feature-more" id="space-more" hidden>
+          <p class="feature-text">
+            你可以從一句話開始：<br />
+            「我現在最卡住的是……」
+          </p>
+          <p class="feature-text">
+            你也可以只先讀一段文字，明天再回來。這裡不催你。
+          </p>
+        </div>
+
+        <button class="feature-btn feature-btn--ghost" type="button" id="toggle-space-btn" aria-expanded="false">
+          展開
+        </button>
       </div>
-
-      <button class="feature-btn feature-btn--ghost" type="button" id="toggle-space-btn" aria-expanded="false">
-        展開
-      </button>
-    </div>
     </article>
   </section>
-  <section class="who" aria-label="網站服務對象">
-  <h2 class="section-title">這裡適合你，如果你正在…</h2>
-  <div class="who-grid">
-    <div class="who-card">
-      <p class="who-title">很累、腦袋停不下來</p>
-      <p class="who-text">想要先安靜一下、把呼吸找回來。</p>
-    </div>
 
-    <div class="who-card">
-      <p class="who-title">想靠近人，但不知道怎麼說</p>
-      <p class="who-text">希望有一個安全的地方先練習。</p>
+  <!-- Together (preview) -->
+  <section class="who" id="together" aria-label="和你相處">
+    <h2 class="section-title">和你相處</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <p class="who-title">一句話練習</p>
+        <p class="who-text">把「想靠近」說得更自然、更安全。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">界線與尊重</p>
+        <p class="who-text">學會不縮小自己，也不攻擊別人。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">閱讀更多（可選）</p>
+        <p class="who-text"><a href="together.html" style="color:inherit; text-decoration:underline;">前往文章頁</a></p>
+      </div>
     </div>
-
-    <div class="who-card">
-      <p class="who-title">心裡有痛，但不想被評分</p>
-      <p class="who-text">只想把感受放下來，慢慢梳理。</p>
-    </div>
-  </div>
   </section>
 
-  <section class="how" aria-label="使用方式">
-  <h2 class="section-title">你可以這樣使用</h2>
-
-  <ol class="how-steps">
-    <li class="how-step">
-      <span class="step-num">1</span>
-      <div class="step-body">
-        <p class="step-title">選一個房間</p>
-        <p class="step-text">不用選對，先選「你此刻最需要的」。</p>
+  <!-- Stories (preview) -->
+  <section class="who" id="stories" aria-label="夜燈加油站">
+    <h2 class="section-title">夜燈加油站</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <p class="who-title">案例 A</p>
+        <p class="who-text">「我不用逞強，也能被接住。」</p>
       </div>
-    </li>
-
-    <li class="how-step">
-      <span class="step-num">2</span>
-      <div class="step-body">
-        <p class="step-title">拿到一個回應</p>
-        <p class="step-text">一句話、一個練習、或是一段安靜的陪伴。</p>
+      <div class="who-card">
+        <p class="who-title">案例 B</p>
+        <p class="who-text">「我開始能把話說出口，不再爆炸。」</p>
       </div>
-    </li>
-
-    <li class="how-step">
-      <span class="step-num">3</span>
-      <div class="step-body">
-        <p class="step-title">願意就回來</p>
-        <p class="step-text">這裡不催你。你可以每天回來一點點。</p>
+      <div class="who-card">
+        <p class="who-title">閱讀更多（可選）</p>
+        <p class="who-text"><a href="stories.html" style="color:inherit; text-decoration:underline;">前往案例頁</a></p>
       </div>
-    </li>
-  </ol>
-</section>
+    </div>
+  </section>
 
+  <!-- FAQ -->
+  <section class="how" id="faq" aria-label="常見問題">
+    <h2 class="section-title">常見問題</h2>
+    <ol class="how-steps">
+      <li class="how-step">
+        <span class="step-num">Q</span>
+        <div class="step-body">
+          <p class="step-title">這是心理諮商嗎？</p>
+          <p class="step-text">不是。這是一個情緒整理與互動練習的網站原型。</p>
+        </div>
+      </li>
+      <li class="how-step">
+        <span class="step-num">Q</span>
+        <div class="step-body">
+          <p class="step-title">一定要登入嗎？</p>
+          <p class="step-text">不用。你可以直接使用主要內容。登入是未來延伸。</p>
+        </div>
+      </li>
+      <li class="how-step">
+        <span class="step-num">Q</span>
+        <div class="step-body">
+          <p class="step-title">我可以每天回來嗎？</p>
+          <p class="step-text">可以。這裡不催你，也不評分。</p>
+        </div>
+      </li>
+    </ol>
+  </section>
 
+  <!-- Companion / Login placeholders -->
+  <section class="who" id="companion" aria-label="情緒陪伴">
+    <h2 class="section-title">情緒陪伴（Prototype）</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <p class="who-title">入口</p>
+        <p class="who-text">這裡未來會接 AI 對話或互動式梳理流程。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">目前</p>
+        <p class="who-text">先以內容與互動卡片展示體驗節奏。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">（可選）分頁</p>
+        <p class="who-text"><a href="companion.html" style="color:inherit; text-decoration:underline;">前往入口頁</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="who" id="login" aria-label="會員登入">
+    <h2 class="section-title">會員登入（Prototype）</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <p class="who-title">用途</p>
+        <p class="who-text">未來用於收藏、回訪紀錄、個人化內容。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">目前</p>
+        <p class="who-text">保留入口，呈現產品可擴充性。</p>
+      </div>
+      <div class="who-card">
+        <p class="who-title">（可選）分頁</p>
+        <p class="who-text"><a href="login.html" style="color:inherit; text-decoration:underline;">前往登入頁</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-  <p class="footer-line">如果你願意，你可以每天回來。</p>
-  <p class="footer-meta">Portfolio project · Front-end & UX practice</p>
-  <p class="footer-meta">© 2026 Home Project. Personal practice only.</p>
-</footer>
+    <p class="footer-line">如果你願意，你可以每天回來。</p>
+    <p class="footer-meta">Portfolio project · Front-end & UX practice</p>
+    <p class="footer-meta">© 2026 Home Project. Personal practice only.</p>
+  </footer>
 
-  </main>
-
-
-
+</main>
 
 <script src="test01.js"></script>
 </body>
 </html>
-
