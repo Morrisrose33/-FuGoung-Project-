@@ -43,3 +43,96 @@ if (toggleBtn && moreBlock) {
     moreBlock.hidden = expanded;
   });
 }
+
+/* ===========================
+   One-page interactions
+   1) Scroll Spy (nav highlight)
+   2) Cards click -> smooth scroll + highlight
+   =========================== */
+
+// 找出所有有 id 的 section（當作 scroll spy 的目標）
+const spySections = Array.from(document.querySelectorAll("main section[id]"));
+
+// 找出所有指向 # 的 nav 連結
+const navLinks = Array.from(document.querySelectorAll(".navlist a[href^='#']"));
+
+function setActiveNav(id) {
+  navLinks.forEach((a) => {
+    const isActive = a.getAttribute("href") === `#${id}`;
+    if (isActive) {
+      a.setAttribute("aria-current", "page");
+      a.classList.add("is-active");
+    } else {
+      a.removeAttribute("aria-current");
+      a.classList.remove("is-active");
+    }
+  });
+}
+
+// Scroll Spy：用 IntersectionObserver 偵測「現在最主要的 section」
+if (spySections.length && navLinks.length) {
+  const spyObserver = new IntersectionObserver(
+    (entries) => {
+      // 找出目前最「在畫面中」的 section
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visible?.target?.id) {
+        setActiveNav(visible.target.id);
+      }
+    },
+    {
+      // 讓 section 進到畫面中間左右更容易被判定為 active
+      root: null,
+      threshold: [0.15, 0.25, 0.4, 0.6],
+      rootMargin: "-35% 0px -55% 0px",
+    }
+  );
+
+  spySections.forEach((sec) => spyObserver.observe(sec));
+}
+
+// Smooth scroll + highlight helper
+function scrollToSection(id) {
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  // 短暫 highlight 一下，讓人知道「你到這裡了」
+  target.classList.remove("section-highlight");
+  // 觸發 reflow，確保重複點擊也會重新播放動畫
+  void target.offsetWidth;
+  target.classList.add("section-highlight");
+
+  // 同步 nav
+  setActiveNav(id);
+}
+
+// 點 Rooms 的三張卡：如果 href="#xxx" 就滑到 section
+document.querySelectorAll(".cards a.card[href^='#']").forEach((card) => {
+  card.addEventListener("click", (e) => {
+    const href = card.getAttribute("href");
+    if (!href) return;
+    const id = href.replace("#", "");
+    if (!id) return;
+
+    e.preventDefault();
+    scrollToSection(id);
+  });
+});
+
+// 點 nav 也做同樣處理（可選：讓 highlight 更一致）
+navLinks.forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const href = a.getAttribute("href");
+    if (!href) return;
+    const id = href.replace("#", "");
+    if (!id) return;
+
+    // 讓 scroll-behavior: smooth 仍生效，但我們加 highlight + 同步狀態
+    e.preventDefault();
+    scrollToSection(id);
+  });
+});
