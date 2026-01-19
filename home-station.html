@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>夜晚回家站</title>
+  <link rel="stylesheet" href="test01.css" />
+  <link rel="stylesheet" href="home-station.css">
+</head>
+
+<body>
+
+<nav class="topnav" aria-label="主選單">
+  <a class="brand" href="test01.html">回家</a>
+</nav>
+
+<main class="container home-station">
+
+  <!-- Section 1: Quiet Welcome -->
+  <section class="hs-welcome">
+    <h1 class="hs-title">夜晚回家站</h1>
+    <p class="hs-subtitle">
+      你已經走到這裡了。<br />
+      先不用急著做任何事。
+    </p>
+  </section>
+
+  <!-- Section 2: Grounding -->
+  <section class="hs-grounding">
+    <p class="hs-text">
+      如果你願意，<br />
+      我們可以先一起慢慢呼吸三次。
+    </p>
+
+    <p class="hs-breath">
+      吸氣 ——<br />
+      停一下 ——<br />
+      吐氣 ——
+    </p>
+
+    <p class="hs-text">
+      不需要做得很好，<br />
+      只要一點點就好。
+    </p>
+  </section>
+
+  <!-- Section 3: One Gentle Line -->
+  <section class="hs-line">
+    <h2 class="hs-section-title">給你一句話</h2>
+
+    <p class="hs-line-text" id="hs-line-text">
+      今天能走到這裡，已經很不容易了。
+    </p>
+
+    <button class="hs-btn" id="hs-new-line-btn" type="button">
+      再給我一句
+    </button>
+  </section>
+
+  <!-- Section 4: Gentle Directions -->
+  <section class="hs-next">
+    <p class="hs-text">
+      如果等一下你還有一點力氣，<br />
+      你也可以試試：
+    </p>
+
+    <ul class="hs-options">
+      <li>去社交練習室，看看怎麼慢慢靠近人</li>
+      <li>或去猗窩座的房間，把痛放下來</li>
+      <li>也可以就停在這裡，什麼都不做</li>
+    </ul>
+  </section>
+
+  <!-- Section 5: Closing -->
+  <section class="hs-close">
+    <p class="hs-text">
+      你不需要一次待很久。<br />
+      願意的話，今晚或明天再回來也可以。
+    </p>
+  </section>
+
+
+  <section class="hs-visit" aria-live="polite">
+  <p class="hs-visit-count" id="visit-count"></p>
+  <p class="hs-visit-message" id="visit-message"></p>
+  </section>
+
+
+</main>
+
+<script>
+  // Simple random line (Home Station only)
+  const lines = [
+    "今天能走到這裡，已經很不容易了。",
+    "你不需要證明什麼，才能休息。",
+    "慢一點沒有關係，你沒有落後。",
+    "就算現在很亂，你也沒有做錯什麼。",
+    "你可以先在這裡，什麼都不用想。"
+  ];
+
+  const btn = document.getElementById("hs-new-line-btn");
+  const text = document.getElementById("hs-line-text");
+
+  if (btn && text) {
+    btn.addEventListener("click", () => {
+      const pick = lines[Math.floor(Math.random() * lines.length)];
+      text.textContent = pick;
+    });
+  }
+</script>
+<script src="home-station.js"></script>
+</body>
+</html>
