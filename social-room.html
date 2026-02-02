@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>社交練習室</title>
+    <link rel="stylesheet" href="test01.css" />
+    <style>
+      .social-practice {
+        max-width: 800px;
+      }
+      .context-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        padding: 10px 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+      .tab-btn.active {
+        background: var(--accent-warm);
+        border-color: var(--accent-warm);
+      }
+      .reply-card {
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 18px;
+        padding: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 20px;
+      }
+      .style-label {
+        color: var(--accent-main);
+        font-weight: 700;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+      }
+      .reply-content {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        min-height: 3em;
+      }
+      .action-group {
+        display: flex;
+        gap: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topnav"><a class="brand" href="index.html">回家</a></nav>
+    <main class="container social-practice">
+      <section class="hero">
+        <h1 class="title">社交練習室</h1>
+        <p class="subtitle">在這裡，你可以練習如何更自然地靠近他人。</p>
+      </section>
+
+      <div class="context-tabs" id="context-tabs"></div>
+
+      <div class="reply-card">
+        <div id="reply-container">
+          <div class="style-group">
+            <p class="style-label">溫柔版</p>
+            <p class="reply-content" id="gentle-text">選一個情境開始練習吧。</p>
+          </div>
+          <div class="style-group">
+            <p class="style-label">幽默版</p>
+            <p class="reply-content" id="humorous-text">
+              這裡會顯示不同的回覆語氣 [cite: 25]。
+            </p>
+          </div>
+        </div>
+        <div class="action-group">
+          <button class="feature-btn" id="refresh-btn">換一個版本</button>
+          <button class="feature-btn feature-btn--ghost" id="save-btn">
+            收藏這組回覆
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="social-room.js"></script>
+  </body>
+</html>
