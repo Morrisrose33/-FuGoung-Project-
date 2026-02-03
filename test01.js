@@ -7,7 +7,7 @@ const io = new IntersectionObserver(
       if (e.isIntersecting) e.target.classList.add("is-visible");
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.15 },
 );
 
 revealEls.forEach((el) => io.observe(el));
@@ -18,7 +18,7 @@ const lines = [
   "就算今天很亂，你也仍然值得被好好對待。",
   "不用急著解決，先讓自己被接住。",
   "把肩膀放下來一點點就好。",
-  "你不需要贏，你只需要回到自己。"
+  "你不需要贏，你只需要回到自己。",
 ];
 
 const newLineBtn = document.getElementById("new-line-btn");
@@ -87,7 +87,7 @@ if (spySections.length && navLinks.length) {
       root: null,
       threshold: [0.15, 0.25, 0.4, 0.6],
       rootMargin: "-35% 0px -55% 0px",
-    }
+    },
   );
 
   spySections.forEach((sec) => spyObserver.observe(sec));
@@ -135,4 +135,26 @@ navLinks.forEach((a) => {
     e.preventDefault();
     scrollToSection(id);
   });
+});
+
+// ===== 星塵軌跡功能 (新增) =====
+document.addEventListener("mousemove", (e) => {
+  // 建立一個星塵元素
+  const star = document.createElement("div");
+  star.className = "star-trail";
+
+  // 設定星塵產生的位置 (加上一點點隨機偏移，讓軌跡更自然)
+  const x = e.pageX + (Math.random() - 0.5) * 10;
+  const y = e.pageY + (Math.random() - 0.5) * 10;
+
+  star.style.left = `${x}px`;
+  star.style.top = `${y}px`;
+
+  // 將星塵加入到頁面中
+  document.body.appendChild(star);
+
+  // 當動畫結束後，將元素移除以節省效能
+  setTimeout(() => {
+    star.remove();
+  }, 1200);
 });

@@ -1,4 +1,4 @@
-:root{
+:root {
   --bg-soft: #0f1318;
   --accent-main: #8fa3b8;
   --accent-warm: #c9a66b;
@@ -11,7 +11,11 @@
 }
 
 body {
-  font-family: "Noto Sans TC", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Noto Sans TC",
+    system-ui,
+    -apple-system,
+    sans-serif;
   color: rgba(255, 255, 255, 0.92);
   min-height: 100vh;
   padding: 48px 16px;
@@ -23,13 +27,8 @@ body {
       rgba(143, 163, 184, 0.12),
       transparent 60%
     ),
-    linear-gradient(
-      180deg,
-      #0b1020 0%,
-      var(--bg-soft) 100%
-    );
+    linear-gradient(180deg, #0b1020 0%, var(--bg-soft) 100%);
 }
-
 
 .container {
   width: min(1100px, 100%);
@@ -38,8 +37,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-
 
 .hero {
   text-align: center;
@@ -60,8 +57,6 @@ body {
   letter-spacing: 0.08em;
 }
 
-
-
 .card {
   display: block;
   padding: 20px 22px;
@@ -70,7 +65,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .card h2 {
@@ -89,8 +86,6 @@ body {
   background: rgba(255, 255, 255, 0.09);
 }
 
-
-
 /* 桌面版：三欄 */
 @media (min-width: 900px) {
   .cards {
@@ -99,7 +94,7 @@ body {
 }
 
 /* Top Navigation */
-.topnav{
+.topnav {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -111,39 +106,42 @@ body {
   margin-bottom: 16px;
 
   background: rgba(5, 7, 15, 0.55);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   backdrop-filter: blur(10px);
 }
 
-.brand{
+.brand {
   text-decoration: none;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
   letter-spacing: 0.14em;
   font-weight: 700;
   padding: 8px 10px;
   border-radius: 12px;
 }
 
-.navlist{
+.navlist {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.navlist a{
+.navlist a {
   text-decoration: none;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.88);
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid transparent;
-  transition: background 0.2s ease, border 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border 0.2s ease,
+    transform 0.2s ease;
 }
 
-.navlist a:hover{
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.10);
+.navlist a:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* .navlist a[aria-current="page"]{
@@ -157,13 +155,15 @@ body {
   border-color: rgba(255,255,255,0.14);
 } */
 
-.navlist .cta:hover{
+.navlist .cta:hover {
   transform: translateY(-1px);
 }
 
 /* Dropdown */
-.has-submenu{ position: relative; }
-.submenu{
+.has-submenu {
+  position: relative;
+}
+.submenu {
   list-style: none;
   position: absolute;
   left: 0;
@@ -172,115 +172,131 @@ body {
   padding: 8px;
   border-radius: 16px;
   background: rgba(5, 7, 15, 0.92);
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: none;
 }
 
-.has-submenu:hover .submenu{ display: block; }
+.has-submenu:hover .submenu {
+  display: block;
+}
 
-.submenu a{
+.submenu a {
   display: block;
   padding: 10px 12px;
   border-radius: 12px;
 }
 
 /* Mobile wrap */
-@media (max-width: 720px){
-  .topnav{ flex-direction: column; align-items: stretch; }
-  .navlist{ flex-wrap: wrap; justify-content: center; }
-  .has-submenu:hover .submenu{ position: static; display: block; margin-top: 8px; }
+@media (max-width: 720px) {
+  .topnav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .navlist {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .has-submenu:hover .submenu {
+    position: static;
+    display: block;
+    margin-top: 8px;
+  }
 }
 
-
-
-.feature-card{
+.feature-card {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
   border-radius: 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   transform: translateY(10px);
   opacity: 0;
-  transition: opacity 600ms ease, transform 600ms ease, background 200ms ease;
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease,
+    background 200ms ease;
 }
 
-.feature-card.is-visible{
+.feature-card.is-visible {
   transform: translateY(0);
   opacity: 1;
 }
 
-.feature-card:hover{
-  background: rgba(255,255,255,0.08);
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.feature-media{
+.feature-media {
   min-height: 180px;
   background-size: cover;
   background-position: center;
   filter: saturate(1.05) contrast(1.05);
   /* 你可以換成自己的圖（務必使用可用授權圖片） */
   background-image:
-    linear-gradient(180deg, rgba(5,7,15,0.15), rgba(5,7,15,0.65)),
+    linear-gradient(180deg, rgba(5, 7, 15, 0.15), rgba(5, 7, 15, 0.65)),
     url("https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1400&q=80");
 }
 
-.feature-content{
+.feature-content {
   padding: 18px 18px 20px;
 }
 
-.feature-title{
+.feature-title {
   font-size: 1.25rem;
   letter-spacing: 0.06em;
   margin-bottom: 10px;
 }
 
-.feature-text{
+.feature-text {
   opacity: 0.82;
   line-height: 1.8;
   margin-bottom: 14px;
 }
 
-.feature-btn{
+.feature-btn {
   appearance: none;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.92);
   padding: 10px 14px;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 200ms ease, background 200ms ease, border 200ms ease;
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    border 200ms ease;
 }
 
-.feature-btn:hover{
+.feature-btn:hover {
   transform: translateY(-1px);
-  background: rgba(255,255,255,0.13);
-  border-color: rgba(255,255,255,0.22);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
-.feature-btn--ghost{
+.feature-btn--ghost {
   background: transparent;
 }
 
 /* Expandable card */
-.feature-card--expandable .feature-more{
+.feature-card--expandable .feature-more {
   margin-top: 4px;
 }
 
 /* Desktop: media left, text right */
-@media (min-width: 900px){
-  .feature-card{
+@media (min-width: 900px) {
+  .feature-card {
     grid-template-columns: 320px 1fr;
     align-items: stretch;
   }
-  .feature-media{
+  .feature-media {
     min-height: 100%;
   }
 }
 
 /* Footer polish */
-.footer{
+.footer {
   width: 100%;
   max-width: 980px;
   margin-top: 64px;
@@ -289,12 +305,12 @@ body {
   opacity: 0.9;
 }
 
-.footer-line{
+.footer-line {
   opacity: 0.8;
   margin-bottom: 8px;
 }
 
-.footer-meta{
+.footer-meta {
   font-size: 0.92rem;
   opacity: 0.6;
   line-height: 1.7;
@@ -303,28 +319,28 @@ body {
 /* ===== spacing between sections ===== */
 
 /* 三張功能卡 跟 後面內容拉開 */
-.cards{
+.cards {
   width: 100%;
   max-width: 980px;
   margin-bottom: 56px;
-   display: grid;
+  display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
 
 /* 兩張動態圖卡本身再鬆一點 */
-.feature-cards{
-  margin: 0 0 64px;      /* ← 上方不再貼 cards，下方也更有呼吸 */
-  gap: 26px;             /* ← 兩張動態卡彼此距離拉開 */
+.feature-cards {
+  margin: 0 0 64px; /* ← 上方不再貼 cards，下方也更有呼吸 */
+  gap: 26px; /* ← 兩張動態卡彼此距離拉開 */
 }
 
 /* 如果想讓動態卡跟頁面左右更一致（可選） */
-.feature-card{
+.feature-card {
   border-radius: 20px;
 }
 
 /* ===== Section titles ===== */
-.section-title{
+.section-title {
   width: 100%;
   max-width: 980px;
   margin: 0 auto 14px;
@@ -334,51 +350,51 @@ body {
 }
 
 /* ===== Who (服務對象) ===== */
-.who{
+.who {
   width: 100%;
   max-width: 980px;
   margin: 10px auto 34px;
 }
 
-.who-grid{
+.who-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
 }
 
-.who-card{
+.who-card {
   padding: 16px 18px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.who-title{
+.who-title {
   font-weight: 700;
   letter-spacing: 0.06em;
   margin-bottom: 6px;
 }
 
-.who-text{
+.who-text {
   opacity: 0.78;
   line-height: 1.7;
 }
 
 /* 桌機：三個小卡並排 */
-@media (min-width: 900px){
-  .who-grid{
+@media (min-width: 900px) {
+  .who-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* ===== How (使用方式) ===== */
-.how{
+.how {
   width: 100%;
   max-width: 980px;
   margin: 0 auto 34px;
 }
 
-.how-steps{
+.how-steps {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
@@ -386,92 +402,144 @@ body {
   padding: 0;
 }
 
-.how-step{
+.how-step {
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 12px;
   align-items: start;
   padding: 16px 18px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.step-num{
+.step-num {
   display: grid;
   place-items: center;
   width: 36px;
   height: 36px;
   border-radius: 12px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   font-weight: 800;
   opacity: 0.92;
 }
 
-.step-title{
+.step-title {
   font-weight: 700;
   letter-spacing: 0.06em;
   margin-bottom: 6px;
 }
 
-.step-text{
+.step-text {
   opacity: 0.78;
   line-height: 1.7;
 }
 
 /* 桌機：三步驟並排 */
-@media (min-width: 900px){
-  .how-steps{
+@media (min-width: 900px) {
+  .how-steps {
     grid-template-columns: repeat(3, 1fr);
   }
-  .how-step{
+  .how-step {
     grid-template-columns: 44px 1fr;
   }
 }
 
 /* Active nav (scroll spy) */
-.navlist a.is-active{
-  color: rgba(255,255,255,0.95);
-  background: rgba(201,166,107,0.16);
-  border-color: rgba(201,166,107,0.32);
+.navlist a.is-active {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(201, 166, 107, 0.16);
+  border-color: rgba(201, 166, 107, 0.32);
 }
 
-
-
 /* Section highlight after scroll */
-.section-highlight{
+.section-highlight {
   animation: sectionGlow 900ms ease-out 1;
 }
 
-@keyframes sectionGlow{
-  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0.0); }
-  25%  { box-shadow: 0 0 0 3px rgba(255,255,255,0.14); }
-  60%  { box-shadow: 0 0 0 2px rgba(255,255,255,0.10); }
-  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.0); }
+@keyframes sectionGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.14);
+  }
+  60% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }
 
 .card:hover,
-.feature-card:hover{
-  border-color: rgba(201,166,107,0.5);
-  box-shadow: 0 10px 30px rgba(201,166,107,0.12);
+.feature-card:hover {
+  border-color: rgba(201, 166, 107, 0.5);
+  box-shadow: 0 10px 30px rgba(201, 166, 107, 0.12);
 }
 
-
-
 .feature-title,
-.section-title{
+.section-title {
   color: var(--accent-main);
 }
 
 /* 只拉開兩個 feature-cards 區塊彼此的距離 */
-.feature-cards + .feature-cards{
+.feature-cards + .feature-cards {
   margin-top: 56px;
 }
 
-#home-station .feature-card{
+#home-station .feature-card {
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
 }
 
+/* ===== 滑鼠星塵軌跡 (新增功能) ===== */
+
+/* 確保星塵不會干擾點擊，且位於最上層 */
+.star-trail {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-warm); /* 使用你定義的暖金色 */
+  border-radius: 50%;
+  pointer-events: none; /* 讓滑鼠點擊穿透，不影響選單操作 */
+  z-index: 9999;
+  box-shadow: 0 0 10px var(--accent-warm); /* 增加發光感 */
+  animation: star-fade 1.2s forwards ease-out; /* 1.2秒後消散 */
+}
+
+@keyframes star-fade {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+/* ===== 放在 test01.css 尾部：滑鼠星塵樣式 ===== */
+.star-trail {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-warm); /* 使用你定義的暖金色  */
+  border-radius: 50%;
+  pointer-events: none; /* 確保不會擋住連結點擊 */
+  z-index: 9999;
+  box-shadow: 0 0 10px var(--accent-warm);
+  animation: star-fade 1.2s forwards ease-out; /* 1.2秒後消失 */
+}
+
+@keyframes star-fade {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
