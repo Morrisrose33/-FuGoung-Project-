@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>猗窩座的房間</title>
+    <link rel="stylesheet" href="test01.css" />
+    <style>
+      .room-container {
+        max-width: 600px;
+        text-align: center;
+      }
+      .input-area {
+        margin: 40px 0;
+      }
+      #pain-input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px;
+        text-align: center;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+      #pain-input:focus {
+        border-color: var(--accent-warm);
+      }
+      .response-area {
+        min-height: 100px;
+        margin-bottom: 40px;
+      }
+      #character-reply {
+        font-size: 1.3rem;
+        color: var(--accent-warm);
+        letter-spacing: 0.1em;
+      }
+      .history-wall {
+        text-align: left;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        border-radius: 15px;
+      }
+      .history-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 10px 0;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topnav"><a class="brand" href="index.html">回家</a></nav>
+    <main class="container room-container">
+      <section class="hero">
+        <h1 class="title">猗窩座的房間</h1>
+        <p class="subtitle">把你的痛放下來，這裡會接住你 [cite: 37]。</p>
+      </section>
+
+      <div class="input-area">
+        <input
+          type="text"
+          id="pain-input"
+          placeholder="我現在最痛的是......"
+          autocomplete="off"
+        />
+        <p style="margin-top: 10px; opacity: 0.5">(輸入完請按 Enter)</p>
+      </div>
+
+      <div class="response-area">
+        <p id="character-reply"></p>
+      </div>
+
+      <div class="history-wall" id="history-wall">
+        <h3 style="margin-bottom: 15px; font-size: 1rem; opacity: 0.6">
+          回家牆
+        </h3>
+        <div id="history-list"></div>
+      </div>
+    </main>
+    <script src="akaza-room.js"></script>
+  </body>
+</html>
